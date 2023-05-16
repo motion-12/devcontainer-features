@@ -1,0 +1,7 @@
+{
+  "name": "WordPress CLI",
+  "id": "wp-cli",
+  "version": "1.0.0",
+  "description": "Installs the WordPress cli",
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"]
+}
