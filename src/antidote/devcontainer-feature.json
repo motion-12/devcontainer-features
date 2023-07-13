@@ -1,0 +1,21 @@
+{
+  "name": "Antidote",
+  "id": "antidote",
+  "version": "1.0.0",
+  "description": "Installs antidote for managing zsh plugins + Starship prompt",
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
+
+  "options": {
+    "plugins": {
+      "type": "string",
+      "description": "List of plugins to install (comma separated)",
+      "default": ""
+    },
+    "username": {
+      "type": "string",
+      "description": "Username to use",
+      "default": "",
+      "proposals": ["root", "node", "vscode"]
+    }
+  }
+}
