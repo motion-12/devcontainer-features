@@ -6,6 +6,7 @@ PLUGINS=${PLUGINS:-""}
 # The user to install Antidote for
 USERNAME=${USERNAME:-"auto"}
 
+# ====================[ Get User ]====================
 # If in automatic mode, determine if a user already exists, if not use vscode
 if [ "${USERNAME}" = "auto" ] || [ "${USERNAME}" = "automatic" ]; then
   if [ "${_REMOTE_USER}" != "root" ]; then

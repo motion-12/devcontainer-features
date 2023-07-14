@@ -1,0 +1,23 @@
+{
+  "name": "Bash History",
+  "id": "bash-history",
+  "version": "1.0.0",
+  "description": "Persists bash history",
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
+  "mounts": [
+    {
+      "source": "${localWorkspaceFolderBasename}_devcontainer_bash-history",
+      "target": "/commandhistory",
+      "type": "volume"
+    }
+  ],
+
+  "options": {
+    "username": {
+      "type": "string",
+      "description": "Username to use",
+      "default": "",
+      "proposals": ["root", "node", "vscode"]
+    }
+  }
+}
