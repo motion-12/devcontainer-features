@@ -1,7 +1,7 @@
 
 # GCloud (gcloud)
 
-Persists gcloud
+Adds gcloud to devcontainer
 
 ## Example Usage
 
@@ -15,7 +15,7 @@ Persists gcloud
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| username | Username to use | boolean | - |
+| username | Username to use | string | - |
 
 
 
