@@ -1,0 +1,16 @@
+{
+  "name": "kubectl",
+  "id": "kubectl",
+  "version": "1.0.0",
+  "description": "Adds kubectl + helm + minikube to devcontainer",
+  "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
+
+  "options": {
+    "username": {
+      "type": "string",
+      "description": "Username to use",
+      "default": "",
+      "proposals": ["root", "node", "vscode"]
+    }
+  }
+}
