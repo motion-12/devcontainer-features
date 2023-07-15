@@ -4,13 +4,6 @@
   "version": "1.0.0",
   "description": "Persists gcloud",
   "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
-  "mounts": [
-    {
-      "source": "${localWorkspaceFolderBasename}_devcontainer_gcloud",
-      "target": "/commandhistory",
-      "type": "volume"
-    }
-  ],
 
   "options": {
     "username": {
