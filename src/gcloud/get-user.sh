@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 USERNAME=${USERNAME:-"auto"}
 USER_UID="${USERUID:-"automatic"}"
 USER_GID="${USERGID:-"automatic"}"
