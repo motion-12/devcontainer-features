@@ -1,8 +1,8 @@
 {
-  "install_bash-history": {
+  "install_gcloud": {
     "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
     "features": {
-      "bash-history": {}
+      "gcloud": {}
     }
   }
 }

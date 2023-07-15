@@ -1,0 +1,46 @@
+#!/bin/bash
+# Define the help function
+function help() {
+  echo "Usage: utils.sh [command]"
+  echo ""
+  echo "Commands:"
+  echo "  add <util-name> <feature-name> - Add a utility script to a feature"
+  echo "  remove <util-name> <feature-name> - Remove a utility script from a feature"
+  echo "  sync [feature-names...] - Copy the utility scripts into the features"
+  echo "  completions - Print the completions for the add command"
+}
+
+# Check if a command was provided
+if [ $# -eq 0 ]; then
+  help
+  exit 1
+fi
+
+# Execute the specified command
+case $1 in
+"add")
+  shift
+  # Call the add-util.sh script with the provided arguments
+  scripts/utils-add.sh "$@"
+  ;;
+"remove")
+  shift
+  scripts/utils-remove.sh "$@"
+  ;;
+"sync")
+  shift
+  # Call the sync-utils.sh script
+  scripts/utils-sync.sh "$@"
+  ;;
+"completions")
+  cat scripts/utils-completions.sh
+  ;;
+"help")
+  help
+  ;;
+*)
+  echo "Error: Invalid command"
+  help
+  exit 1
+  ;;
+esac

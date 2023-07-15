@@ -1,11 +1,11 @@
 #!/bin/bash
 
+# Optional: Import test library
+source dev-container-features-test-lib
+
 HISTFILE=/commandhistory/.bash_history
 
 set -e
-
-# Optional: Import test library
-source dev-container-features-test-lib
 
 # Enable history
 set -o history
