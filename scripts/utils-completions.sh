@@ -1,52 +1,35 @@
-# Define the completion function
-_utils_add_completion() {
-  local cur prev utils_dir src_dir
+#!/bin/bash
 
-  # Get the current and previous words
-  cur="${COMP_WORDS[COMP_CWORD]}"
-  prev="${COMP_WORDS[COMP_CWORD - 1]}"
+# Return help if no arguments are passed
+if [ $# -eq 0 ]; then
+  echo "Usage: utils completions <zsh|bash>"
+  echo ""
+  echo "Generates autocompletions."
+  echo ""
+  echo "Arguments:"
+  echo "  <zsh|bash>    The name of the completion to generate."
+  exit 1
+fi
 
-  # Set the directories to search for completions
-  utils_dir="./shared"
-  src_dir="./src"
 
-  case ${COMP_CWORD} in
-  1)
-    COMPREPLY=($(compgen -W "add remove sync completions help" -- "$cur"))
-    return 0
-    ;;
-  2)
-    case ${prev} in
-    add)
-      COMPREPLY=($(compgen -W "$(ls $utils_dir | sed 's/\.sh$//')" -- "$cur"))
-      return 0
-      ;;
-    remove)
-      COMPREPLY=($(compgen -W "$(ls $utils_dir | sed 's/\.sh$//')" -- "$cur"))
-      return 0
-      ;;
-    sync)
-      COMPREPLY=($(compgen -W "$(ls $src_dir)" -- "$cur"))
-      return 0
-      ;;
-    esac
-    ;;
-  3)
-    if [[ ${COMP_WORDS[1]} == "add" ]]; then
-      COMPREPLY=($(compgen -W "$(ls $src_dir)" -- "$cur"))
-      return 0
-    elif [[ ${COMP_WORDS[1]} == "remove" ]]; then
-      COMPREPLY=($(compgen -W "$(ls $src_dir)" -- "$cur"))
-      return 0
-    fi
-    ;;
-  esac
+# If zsh argument is empty, exit
+if [ -z "$1" ]; then
+  echo -e "\033[31mError: No completion specified\033[0m"
+  exit 1
+fi
 
-  if [[ ${COMP_WORDS[1]} == "sync" ]]; then
-    COMPREPLY=($(compgen -W "$(ls $src_dir)" -- "$cur"))
-    return 0
-  fi
-}
+# If zsh argument is not zsh or bash, exit
+if [ "$1" != "zsh" ] && [ "$1" != "bash" ]; then
+  echo -e "\033[31mError: Invalid completion specified\033[0m"
+  exit 1
+fi
 
-# Register the completion function for the add subcommand
-complete -F _utils_add_completion ./utils
+# If zsh argument is zsh, generate zsh completions
+if [ "$1" == "zsh" ]; then
+  cat scripts/utils-completions-zsh.sh
+fi
+
+# If zsh argument is bash, generate bash completions
+if [ "$1" == "bash" ]; then
+  cat scripts/utils-completions-bash.sh
+fi

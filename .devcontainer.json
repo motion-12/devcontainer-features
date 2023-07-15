@@ -7,9 +7,11 @@
     }
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/motion-12/devcontainer-features/antidote:1": {},
+    "ghcr.io/motion-12/devcontainer-features/bash-history:latest": {}
   },
-  "postCreateCommand": "npm install -g @devcontainers/cli && echo 'source <(${containerWorkspaceFolder}/utils completions)' >> ~/.bashrc",
+  "postCreateCommand": "npm install -g @devcontainers/cli && sudo ln -s ${containerWorkspaceFolder}/utils /bin/utils && echo 'source <(${containerWorkspaceFolder}/utils completions bash)' >> ~/.bashrc && echo 'source <(${containerWorkspaceFolder}/utils completions zsh)' >> ~/.zshrc",
   "hostRequirements": {
     "cpus": 4
   }

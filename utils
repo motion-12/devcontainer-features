@@ -7,7 +7,7 @@ function help() {
   echo "  add <util-name> <feature-name> - Add a utility script to a feature"
   echo "  remove <util-name> <feature-name> - Remove a utility script from a feature"
   echo "  sync [feature-names...] - Copy the utility scripts into the features"
-  echo "  completions - Print the completions for the add command"
+  echo "  completions <zsh|bash> - Print the completions for the add command"
 }
 
 # Check if a command was provided
@@ -33,7 +33,8 @@ case $1 in
   scripts/utils-sync.sh "$@"
   ;;
 "completions")
-  cat scripts/utils-completions.sh
+  shift
+  scripts/utils-completions.sh "$@"
   ;;
 "help")
   help
