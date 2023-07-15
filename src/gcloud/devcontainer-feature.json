@@ -7,7 +7,7 @@
 
   "options": {
     "username": {
-      "type": "boolean",
+      "type": "string",
       "description": "Username to use",
       "default": "",
       "proposals": ["root", "node", "vscode"]
