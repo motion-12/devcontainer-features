@@ -2,7 +2,7 @@
   "name": "GCloud",
   "id": "gcloud",
   "version": "1.0.0",
-  "description": "Persists gcloud",
+  "description": "Adds gcloud to devcontainer",
   "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
 
   "options": {
