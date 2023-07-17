@@ -1,0 +1,17 @@
+{
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/devcontainer-features",
+  "customizations": {
+    "vscode": {
+      "extensions": ["mads-hartmann.bash-ide-vscode"]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/motion-12/devcontainer-features/antidote:1": {},
+    "ghcr.io/motion-12/devcontainer-features/bash-history:latest": {}
+  },
+  "postCreateCommand": "npm install -g @devcontainers/cli && sudo ln -s ${containerWorkspaceFolder}/utils /bin/utils && echo 'source <(${containerWorkspaceFolder}/utils completions bash)' >> ~/.bashrc && echo 'source <(${containerWorkspaceFolder}/utils completions zsh)' >> ~/.zshrc"
+}
