@@ -9,3 +9,7 @@ source $(dirname $0)/get-user.sh
 apt-get update
 bash $(dirname $0)/install-gcloud.sh
 apt-get autoremove -y && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts/
+
+# Fix permissions for gcloud
+mkdir -p /home/${USERNAME}/.config/gcloud
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.config/gcloud

@@ -15,3 +15,7 @@ echo "alias k=kubectl" | tee -a /root/.bashrc /root/.zshrc /home/${USERNAME}/.ba
 # Add autocomplete for kubectl to bash/zsh shell
 echo "source <(kubectl completion zsh)" >>/home/${USERNAME}/.zshrc
 echo "source <(kubectl completion bash)" >>/home/${USERNAME}/.bashrc
+
+# Fix permissions for .kube folder
+mkdir -p /home/${USERNAME}/.kube
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}/.kube
