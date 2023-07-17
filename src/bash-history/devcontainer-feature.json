@@ -1,7 +1,7 @@
 {
   "name": "Bash History",
   "id": "bash-history",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Persists bash history",
   "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
   "mounts": [
