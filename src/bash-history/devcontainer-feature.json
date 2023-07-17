@@ -6,7 +6,7 @@
   "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
   "mounts": [
     {
-      "source": "${localWorkspaceFolderBasename}_devcontainer_bash-history",
+      "source": "bash-history",
       "target": "/commandhistory",
       "type": "volume"
     }
