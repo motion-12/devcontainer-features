@@ -1,5 +1,5 @@
 
-# Git Delta (git-delta)
+# Git-Delta (git-delta)
 
 Installs git delta
 
@@ -15,7 +15,7 @@ Installs git delta
 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
-| username | Username to use | string | - |
+| version | Version to install | string | 0.16.5 |
 
 
 
