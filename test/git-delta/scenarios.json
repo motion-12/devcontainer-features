@@ -1,0 +1,8 @@
+{
+  "install_git-delta": {
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-20",
+    "features": {
+      "git-delta": {}
+    }
+  }
+}
