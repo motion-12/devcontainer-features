@@ -1,0 +1,19 @@
+{
+  "name": "Neovim",
+  "id": "neovim",
+  "version": "1.0.0",
+  "description": "Installs neovim and plugin dependencies",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/duduribeiro/devcontainer-features/neovim:1"
+  ],
+
+  "options": {
+    "username": {
+      "type": "string",
+      "description": "Username to use",
+      "default": "",
+      "proposals": ["root", "node", "vscode"]
+    }
+  }
+}
