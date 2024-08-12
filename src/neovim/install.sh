@@ -53,3 +53,6 @@ $nanolayer_location \
     install \
     apt-get \
     ripgrep
+
+# Setup symlink to config
+ln -s /.config/nvim /home/${USERNAME}/.config/nvim

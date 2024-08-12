@@ -8,6 +8,14 @@
     "ghcr.io/duduribeiro/devcontainer-features/neovim:1"
   ],
 
+  "mounts": [
+    {
+      "source": "~/.config/nvim",
+      "target": "/.config/nvim",
+      "type": "bind"
+    }
+  ],
+
   "options": {
     "username": {
       "type": "string",
