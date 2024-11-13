@@ -1,11 +1,10 @@
 {
   "name": "Neovim",
   "id": "neovim",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Installs neovim and plugin dependencies",
   "installsAfter": [
-    "ghcr.io/devcontainers/features/common-utils",
-    "ghcr.io/duduribeiro/devcontainer-features/neovim:1"
+    "ghcr.io/devcontainers/features/common-utils"
   ],
   "mounts": [
     {
@@ -23,6 +22,15 @@
         "root",
         "node",
         "vscode"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "description": "Version to use",
+      "default": "stable",
+      "proposals": [
+        "stable",
+        "nightly"
       ]
     }
   }

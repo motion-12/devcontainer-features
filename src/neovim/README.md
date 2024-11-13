@@ -1,9 +1,10 @@
-# Antidote (neovim)
+# Neovim (neovim)
 
 Installs neovim. Includes the following dependencies:
 
 - lazygit
 - ripgrep
+- lemonade
 
 ## Example Usage
 
@@ -17,8 +18,8 @@ Installs neovim. Includes the following dependencies:
 
 | Options Id | Description                                  | Type   | Default Value |
 | ---------- | -------------------------------------------- | ------ | ------------- |
-| plugins    | List of plugins to install (comma separated) | string | -             |
 | username   | Username to use                              | string | -             |
+| version    | Version to use                               | string | stable        |
 
 ---
 

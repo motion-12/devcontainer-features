@@ -4,8 +4,11 @@ set -e
 
 source $(dirname $0)/library-scripts.sh
 
-# The user to install Antidote for
+# The user to install Neovim for
 USERNAME=${USERNAME:-"auto"}
+
+# The version to install for Neovim
+VERSION=${VERSION:-"stable"}
 
 source $(dirname $0)/get-user.sh
 
@@ -43,7 +46,7 @@ $nanolayer_location \
     install \
     devcontainer-feature \
     "ghcr.io/duduribeiro/devcontainer-features/neovim:1" \
-    --option version='stable'
+    --option version="${VERSION}"
 
 
 # ====================[ Install LazyGit ]====================
