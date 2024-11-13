@@ -30,6 +30,12 @@ if ! command -v curl >/dev/null; then
   apt-get install -y curl
 fi
 
+# If go is not installed, install it
+if ! command -v go >/dev/null; then
+  apt-get update
+  apt-get install -y golang-go
+fi
+
 # ====================[ Install Neovim ]====================
 
 # Use ghcr.io/duduribeiro/devcontainer-features/neovim:1
@@ -54,5 +60,23 @@ $nanolayer_location \
     apt-get \
     ripgrep
 
+# ====================[ Install lemonade ]====================
+#
+# Install Lemonade from git
+if ! command -v lemonade >/dev/null; then
+  git clone https://github.com/lemonade-command/lemonade.git /tmp/lemonade
+  cd /tmp/lemonade
+
+  make build
+  cp lemonade /usr/bin/lemonade
+
+  cd -
+  rm -rf /tmp/lemonade
+
+  # Add lemonade config to user's home directory
+  cp $(dirname $0)/lemonade.toml /home/${USERNAME}/.config/lemonade.toml
+fi
+
+# ====================[ Setup Neovim Config ]====================
 # Setup symlink to config
 ln -s /.config/nvim /home/${USERNAME}/.config/nvim

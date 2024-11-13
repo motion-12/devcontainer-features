@@ -1,13 +1,12 @@
 {
   "name": "Neovim",
   "id": "neovim",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Installs neovim and plugin dependencies",
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils",
     "ghcr.io/duduribeiro/devcontainer-features/neovim:1"
   ],
-
   "mounts": [
     {
       "source": "${localEnv:HOME}/.config/nvim",
@@ -15,13 +14,16 @@
       "type": "bind"
     }
   ],
-
   "options": {
     "username": {
       "type": "string",
       "description": "Username to use",
       "default": "",
-      "proposals": ["root", "node", "vscode"]
+      "proposals": [
+        "root",
+        "node",
+        "vscode"
+      ]
     }
   }
 }
