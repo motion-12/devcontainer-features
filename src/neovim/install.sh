@@ -17,27 +17,46 @@ ensure_nanolayer nanolayer_location "v0.4.46"
 # ====================[ Prerequisites ]====================
 # If git is not installed, install it
 if ! command -v git >/dev/null; then
-  apt-get update
-  apt-get install -y git
+  $nanolayer_location install \
+    apt-get \
+    git
 fi
 
 # If sudo is not installed, install it
 if ! command -v sudo >/dev/null; then
-  apt-get update
-  apt-get install -y sudo
+  $nanolayer_location install \
+    apt-get \
+    sudo
 fi
 
 # If curl is not installed, install it
 if ! command -v curl >/dev/null; then
-  apt-get update
-  apt-get install -y curl
+  $nanolayer_location install \
+    apt-get \
+    curl
 fi
 
 # If go is not installed, install it
 if ! command -v go >/dev/null; then
-  apt-get update
-  apt-get install -y golang-go
+  $nanolayer_location install \
+    apt-get \
+    golang-go
 fi
+
+# If lua5.1 is not installed, install it
+if ! command -v lua5.1 >/dev/null; then
+  $nanolayer_location install \
+    apt-get \
+    lua5.1
+fi
+
+# If python3 is not installed, install it
+if ! command -v python3 >/dev/null; then
+  $nanolayer_location install \
+    apt-get \
+    python3
+fi
+
 
 # ====================[ Install Neovim ]====================
 
