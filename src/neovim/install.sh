@@ -57,6 +57,14 @@ if ! command -v python3 >/dev/null; then
     python3
 fi
 
+# Install Python packages
+if ! command -v pip3 >/dev/null; then
+  $nanolayer_location install \
+    apt-get \
+    python3-pip
+fi
+
+pip3 install uv
 
 # ====================[ Install Neovim ]====================
 
