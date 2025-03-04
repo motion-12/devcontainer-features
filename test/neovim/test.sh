@@ -38,8 +38,8 @@ check "lua5.1-exists" command -v lua5.1
 # Check python3 exists
 check "python3-exists" command -v python3
 
-# Check Python packages exist
-check "uv exists" uv --version
+# Check uv exists
+check "uv exists" command -v uv
 
 # Report result
 reportResults
