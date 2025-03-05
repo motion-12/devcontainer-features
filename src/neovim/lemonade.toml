@@ -2,4 +2,4 @@ port = 5766
 host = 'host.docker.internal'
 trans-loopback = true
 trans-localfile = true
-line-ending = 'crlf'
+line-ending = 'lf'
