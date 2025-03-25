@@ -12,7 +12,7 @@ check "neovim-exists" test -f /usr/local/bin/nvim
 check "lazygit-exists" test -f /usr/local/bin/lazygit
 
 # Check fzf exists
-check "fzf-exists" test -f /usr/bin/fzf
+check "fzf-exists" test -f /usr/local/bin/fzf
 
 # Check ripgrep exists
 check "ripgrep-exists" test -f /usr/bin/rg

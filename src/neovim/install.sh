@@ -14,6 +14,21 @@ source $(dirname $0)/get-user.sh
 
 ensure_nanolayer nanolayer_location "v0.4.46"
 
+# Detect architecture
+ARCH=$(uname -m)
+case $ARCH in
+    x86_64)
+        FZF_ARCH="amd64"
+        ;;
+    aarch64|arm64)
+        FZF_ARCH="arm64"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
 # ====================[ Prerequisites ]====================
 # If git is not installed, install it
 if ! command -v git >/dev/null; then
@@ -81,10 +96,15 @@ sudo install lazygit /usr/local/bin
 
 # ====================[ Install fzf ]====================
 
-$nanolayer_location \
-    install \
-    apt-get \
-    fzf
+# Get latest fzf version
+FZF_VERSION=$(curl -s "https://api.github.com/repos/junegunn/fzf/releases/latest" | grep -Po '"tag_name": "\K[^"]*')
+echo "Installing fzf version ${FZF_VERSION} for ${FZF_ARCH}..."
+
+# Download and install fzf
+curl -Lo fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/${FZF_VERSION}/fzf-${FZF_VERSION#v}-linux_${FZF_ARCH}.tar.gz"
+tar xf fzf.tar.gz
+sudo install fzf /usr/local/bin
+rm -f fzf.tar.gz fzf
 
 # ====================[ Install ripgrep ]====================
 

@@ -1,7 +1,7 @@
 {
   "name": "Neovim",
   "id": "neovim",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "Installs neovim and plugin dependencies",
   "installsAfter": ["ghcr.io/devcontainers/features/common-utils"],
   "mounts": [
